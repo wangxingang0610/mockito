@@ -2,7 +2,6 @@ package com.mockito.demo05;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -28,20 +27,4 @@ public class SpyTest02 {
         assertThat(list.get(1), equalTo("php"));
         assertThat(list.size(), equalTo(2));
     }
-
-    @Test
-    public void test() {
-        // mock creation
-        List<String> data = Mockito.mock(List.class);
-
-        // stubbing, 调用方法抛出异常
-        Mockito.when(data.get(0)).thenThrow(NullPointerException.class);
-        Mockito.doThrow(NullPointerException.class).when(data).get(1);
-
-        // verification
-//        Assertions.assertThrows(NullPointerException.class, () -> data.get(0));
-//        Assertions.assertThrowsssertThrows(NullPointerException.class, () -> data.get(1));
-    }
-
-
 }
